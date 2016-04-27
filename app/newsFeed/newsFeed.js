@@ -9,6 +9,14 @@ donorApp.controller('NewsFeedCtrl', ['$log','$scope','$window',function($log,$sc
         };
     });
 
+    $scope.callNumber = function(contact_number){
+        window.open("tel:"+contact_number);
+    };
+
+    $scope.openLocation = function(location){
+        window.open("geo:"+location);
+    };
+
     $scope.initNewsFeedCtrl = function(){
         $scope.$emit("orientation");
         $$.ajax({

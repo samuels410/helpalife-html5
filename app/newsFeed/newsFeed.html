@@ -24,14 +24,14 @@
                                     <!--<div class="item-after">Label</div>-->
                                 </div>
                             </li>
-                            <li ng-if="newsFeed.contact_number != undefined" class="item-content">
+                            <li ng-if="newsFeed.contact_number != undefined" class="item-content" ng-click="callNumber(newsFeed.contact_number)">
                                 <div class="item-media"><i class="icon icon-phone"></i></div>
                                 <div class="item-inner">
                                     <div class="item-title">{{newsFeed.contact_number}}</div>
                                     <!--<div class="item-after">Label</div>-->
                                 </div>
                             </li>
-                            <li ng-if="newsFeed.location != undefined" class="item-content">
+                            <li ng-if="newsFeed.location != undefined" class="item-content" ng-click="openLocation(newsFeed.location.location)">
                                 <div class="item-media"><i class="icon icon-location"></i></div>
                                 <div class="item-inner">
                                     <div class="item-title">{{newsFeed.location.district}} , {{newsFeed.location.state}}</div>
