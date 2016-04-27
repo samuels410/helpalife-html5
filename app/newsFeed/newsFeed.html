@@ -1,5 +1,53 @@
-<div class="page-content">
-    <div class="content-block">
-        <p>Recent News Feeds</p>
+<div class="page-content" ng-style="newsFeedStyle" ng-init="initNewsFeedCtrl()">
+    <div class="content-block" ng-if="newsFeeds !=undefined">
+        <div class="card ks-facebook-card" ng-repeat="newsFeed in newsFeeds">
+            <div class="card-header">
+                <div class="ks-facebook-avatar"><img src="{{newsFeed.user.avatar_url}}" width="34" height="34"></div>
+                <div class="ks-facebook-name">{{newsFeed.user.name}}</div>
+                <div class="ks-facebook-date">{{newsFeed.created_at  | date:"MMM d, y 'at' h:mma"}}</div>
+            </div>
+            <div class="card-content">
+                <div class="card-content-inner">
+                    <p>
+                        {{newsFeed.patient_name}} needs,
+                        <span class="badge">{{newsFeed.blood_group}}</span>
+                        blood on
+                        <span class="badge">{{newsFeed.required_date  | date:"EEE, MMM d, y 'at' h:mma"}}</span>
+                        for {{newsFeed.reason}}
+                    </p>
+                    <div class="list-block">
+                        <ul>
+                            <li ng-if="newsFeed.hospital_name != undefined" class="item-content">
+                                <div class="item-media"><i class="icon icon-hospital"></i></div>
+                                <div class="item-inner">
+                                    <div class="item-title">{{newsFeed.hospital_name}}</div>
+                                    <!--<div class="item-after">Label</div>-->
+                                </div>
+                            </li>
+                            <li ng-if="newsFeed.contact_number != undefined" class="item-content">
+                                <div class="item-media"><i class="icon icon-phone"></i></div>
+                                <div class="item-inner">
+                                    <div class="item-title">{{newsFeed.contact_number}}</div>
+                                    <!--<div class="item-after">Label</div>-->
+                                </div>
+                            </li>
+                            <li ng-if="newsFeed.location != undefined" class="item-content">
+                                <div class="item-media"><i class="icon icon-location"></i></div>
+                                <div class="item-inner">
+                                    <div class="item-title">{{newsFeed.location.district}} , {{newsFeed.location.state}}</div>
+                                    <!--<div class="item-after">Label</div>-->
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--<p class="color-gray">Likes: 112 &nbsp;&nbsp; Comments: 43</p>-->
+                </div>
+            </div>
+            <div class="card-footer">
+                <!--<a href="javascript:void(0)" class="link">Like</a>-->
+                <!--<a href="javascript:void(0)" class="link">Comment</a>-->
+                <a href="javascript:void(0)" class="link">Share</a>
+            </div>
+        </div>
     </div>
 </div>

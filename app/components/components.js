@@ -21,7 +21,7 @@ donorApp.directive("lmsLayout",["$window","$log",function($window,$log){
         restrict:'E',
         replace:true,
         transclude:false,
-        templateUrl:'/app/profile/profileView.html',
+        templateUrl:'profile/profileView.html',
         link:function(scope,element,attribute){
 
         }
@@ -31,7 +31,7 @@ donorApp.directive("lmsLayout",["$window","$log",function($window,$log){
         restrict:'E',
         replace:true,
         transclude:false,
-        templateUrl:'/app/layout/template/toolbarTemplate.html',
+        templateUrl:'layout/template/toolbarTemplate.html',
         controller:["$scope",function($scope){
             myApp.initPageMaterialTabbar = function (pageContainer,active_tab_link) {
                 pageContainer = $$(pageContainer);

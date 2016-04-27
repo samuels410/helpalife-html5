@@ -10,7 +10,19 @@ config(['$routeProvider','$httpProvider','$sceProvider', function($routeProvider
   $sceProvider.enabled(false);
 
   $routeProvider.when('/newsFeed', {templateUrl: 'newsFeed/newsFeed.html',controller: 'NewsFeedCtrl' });
-  $routeProvider.when('/donors', {templateUrl: 'donors/donors.html',controller: 'DonorCtrl' });
-  $routeProvider.when('/requirement', {templateUrl: 'requirement/requirement.html',controller: 'RequirementCtrl' });
+  $routeProvider.when('/donors', {templateUrl: 'donors/donors.html' });
+  $routeProvider.when('/requirement', {templateUrl: 'requirement/requirement.html'});
   $routeProvider.otherwise({redirectTo:'/',templateUrl:'oAuth/oAuth.html',controller:'OAuthCtrl'})
+
+}]).controller('MainCtrl',['$log','$document','$scope',function($log,$document,$scope){
+
+  $document[0].addEventListener("backbutton",function(e){
+    e.preventDefault();
+  });
+  window.addEventListener('orientationchange',function(event) {
+    $scope.$broadcast("orientation");
+  });
+  /*window.addEventListener('resize',function(event) {
+    $scope.$broadcast("orientation");
+  });*/
 }]);
