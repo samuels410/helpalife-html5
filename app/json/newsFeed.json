@@ -12,7 +12,7 @@
   "location" :{
     "state": "Karnataka",
     "district" :"Gulbarga",
-    "location": "37.786971,-122.399677"
+    "location": "12.9884385,80.2557993,17.66z"
     },
   "user" :{
     "name": "Dattatreya",
@@ -32,7 +32,7 @@
     "location" :{
       "state": "Tamil Nadu",
       "district":"Chennai",
-      "location": "37.786971,-122.399677"
+      "location": "12.9884385,80.2557993,17.66z"
     },
     "user" :{
       "name": "Sam",
@@ -52,7 +52,7 @@
     "location" :{
       "state": "Tamil Nadu",
       "district":"Chennai",
-      "location": "37.786971,-122.399677"
+      "location": "12.9884385,80.2557993,17.66z"
     },
     "user" :{
       "name": "Sam",

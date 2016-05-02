@@ -14,6 +14,16 @@ donorApp.directive('donor',["$log","$window",function($log,$window){
                 };
                 $log.debug($window.innerHeight);
             });
+            $scope.getCurrentPosition = function(){
+                $log.debug("getCurrentPosition()");
+                navigator.geolocation.getCurrentPosition(onSuccess, onError);
+            };
+            function onSuccess(position) {
+                $log.debug(position)
+            }
+            function onError(error) {
+                $log.debug(error)
+            }
         }],
         link:function(scope,element,attr){
             scope.$emit("orientation");
